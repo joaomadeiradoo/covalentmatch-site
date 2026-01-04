@@ -3,329 +3,382 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Covalent Match — Discreet Executive Search</title>
-  <meta name="description" content="Founder-led, discreet search for pharmaceutical and food industry teams and key signings. Saudi Arabia & Middle East in Arabic. Global in English." />
+  <title>Covalent Match — Advisory-led executive search</title>
+  <meta name="description" content="Advisory-led executive search conducted with precision and discretion. Founder-led, network-driven, and designed for regulated environments." />
   <meta name="robots" content="index,follow" />
   <meta property="og:title" content="Covalent Match" />
   <meta property="og:description" content="Each search is conducted discreetly through first-hand industry networks and direct referrals." />
   <meta property="og:type" content="website" />
   <style>
     :root{
-      --bg:#0b0f14;
-      --card:#0f1620;
-      --text:#e9eef6;
-      --muted:#a8b3c7;
-      --line:rgba(255,255,255,.08);
-      --accent:#c9b37e; /* premium sand/gold */
-      --accent2:#7ea9c9; /* cool accent for subtle links */
-      --radius:20px;
+      --ink:#0b0f14;
+      --char:#0a0d12;
+      --stone:#f3efe6;
+      --stone2:#ece6db;
+      --text:#12161c;
+      --muted:#4b5563;
+      --line:rgba(17,24,39,.12);
+      --lineDark:rgba(255,255,255,.14);
+      --cream:#fffaf0;
+      --accent:#b79d5a; /* muted brass */
+      --accent2:#6b7280;
+      --radius:18px;
       --max:1120px;
-      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --shadow: 0 18px 60px rgba(0,0,0,.22);
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-      background:
-        radial-gradient(1000px 600px at 20% 10%, rgba(201,179,126,.10), transparent 60%),
-        radial-gradient(900px 500px at 90% 20%, rgba(126,169,201,.10), transparent 55%),
-        linear-gradient(180deg, #06080c 0%, var(--bg) 35%, #070b10 100%);
       color:var(--text);
-      letter-spacing:.2px;
+      background: var(--stone);
     }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 22px}
+    .serif{
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      letter-spacing: .2px;
+    }
+    /* Header */
     header{
+      position:absolute;
+      left:0; right:0; top:0;
+      z-index:50;
+    }
+    .topbar{
       display:flex; align-items:center; justify-content:space-between;
-      padding:10px 0 18px;
+      gap:14px;
+      padding:18px 0;
+      color: rgba(255,255,255,.92);
     }
     .brand{
-      display:flex; align-items:center; gap:12px; text-decoration:none;
+      display:flex; flex-direction:column; gap:3px;
+      min-width: 180px;
     }
-    .mark{
-      width:42px; height:42px; border-radius:14px;
-      background:
-        radial-gradient(circle at 30% 35%, rgba(201,179,126,.35), transparent 60%),
-        radial-gradient(circle at 70% 70%, rgba(126,169,201,.25), transparent 55%),
-        linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
-      border:1px solid var(--line);
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      position:relative;
-      overflow:hidden;
+    .brand strong{
+      font-size:18px; letter-spacing:.8px;
     }
-    .mark:after{
-      content:"";
-      position:absolute; inset:-40%;
-      background: radial-gradient(circle, rgba(201,179,126,.25), transparent 55%);
-      transform: rotate(20deg);
+    .brand small{
+      font-size:12px; color: rgba(255,255,255,.70);
     }
-    .brand strong{font-weight:650; letter-spacing:.6px}
-    .brand span{display:block; color:var(--muted); font-size:12px; margin-top:2px}
-    nav{
-      display:flex; gap:14px; align-items:center;
-    }
-    .pill{
+    nav{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+    .navlink{
       font-size:13px;
       padding:10px 12px;
-      border:1px solid var(--line);
       border-radius:999px;
-      background: rgba(255,255,255,.02);
-      text-decoration:none;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.15);
+      color: rgba(255,255,255,.86);
+      backdrop-filter: blur(8px);
     }
-    .pill:hover{border-color:rgba(201,179,126,.35)}
-    .cta{
+    .navlink:hover{border-color: rgba(183,157,90,.35)}
+    .navcta{
       font-size:13px;
       padding:10px 14px;
       border-radius:999px;
-      background: linear-gradient(135deg, rgba(201,179,126,.18), rgba(201,179,126,.08));
-      border:1px solid rgba(201,179,126,.35);
-      text-decoration:none;
+      border:1px solid rgba(183,157,90,.50);
+      background: linear-gradient(135deg, rgba(183,157,90,.24), rgba(183,157,90,.10));
+      color: rgba(255,255,255,.92);
     }
-    .cta:hover{filter:brightness(1.08)}
+    .navcta:hover{filter:brightness(1.06)}
+    /* Hero */
     .hero{
-      padding:38px 0 18px;
-      display:grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap:22px;
-      align-items:stretch;
+      position:relative;
+      min-height: 78vh;
+      display:flex;
+      align-items:flex-end;
+      padding: 120px 0 46px;
+      background:
+        radial-gradient(900px 520px at 30% 20%, rgba(183,157,90,.22), transparent 58%),
+        radial-gradient(700px 460px at 85% 25%, rgba(255,255,255,.10), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,.68), rgba(0,0,0,.70)),
+        url("assets/hero.jpg") center/cover no-repeat;
+      background-blend-mode: screen, screen, normal, normal;
+      color: rgba(255,255,255,.92);
     }
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      box-shadow: var(--shadow);
+    .hero::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.76));
+      pointer-events:none;
     }
-    .hero-main{padding:30px 28px}
+    .hero > .wrap{position:relative; z-index:5}
     .kicker{
       display:inline-flex;
       gap:10px; align-items:center;
-      font-size:12px; color:var(--muted);
+      font-size:12px;
+      color: rgba(255,255,255,.78);
       padding:8px 12px;
       border-radius:999px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.18);
+      backdrop-filter: blur(8px);
     }
-    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent); box-shadow:0 0 0 6px rgba(201,179,126,.12)}
+    .dot{
+      width:8px; height:8px; border-radius:50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(183,157,90,.14);
+    }
     h1{
-      margin:14px 0 10px;
-      font-size:44px;
-      line-height:1.05;
-      letter-spacing:-.5px;
+      margin:16px 0 10px;
+      font-size:46px;
+      line-height:1.08;
+      font-weight: 520;
+      max-width: 18ch;
     }
-    .lead{
-      margin:0 0 18px;
-      color:var(--muted);
+    .sub{
+      margin:0 0 20px;
+      color: rgba(255,255,255,.78);
       font-size:16px;
-      line-height:1.6;
-      max-width:60ch;
+      line-height:1.7;
+      max-width: 62ch;
     }
-    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
       padding:12px 14px;
       border-radius:12px;
-      border:1px solid var(--line);
-      background: rgba(255,255,255,.03);
-      text-decoration:none;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.18);
       font-size:14px;
+      color: rgba(255,255,255,.90);
+      backdrop-filter: blur(8px);
     }
     .btn.primary{
-      border-color:rgba(201,179,126,.45);
-      background: linear-gradient(135deg, rgba(201,179,126,.22), rgba(201,179,126,.10));
+      border-color: rgba(183,157,90,.55);
+      background: linear-gradient(135deg, rgba(183,157,90,.26), rgba(183,157,90,.12));
     }
-    .btn:hover{border-color:rgba(255,255,255,.16)}
-    .hero-side{padding:18px}
-    .mini{
-      padding:16px 16px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background: rgba(0,0,0,.14);
-      margin-bottom:12px;
+    .btn:hover{border-color: rgba(255,255,255,.28)}
+    .btn.primary:hover{filter:brightness(1.05)}
+    /* Sections */
+    section{padding:56px 0}
+    .stone{background: var(--stone)}
+    .stone.alt{background: var(--stone2)}
+    .dark{
+      background: radial-gradient(900px 520px at 20% 10%, rgba(183,157,90,.12), transparent 60%),
+                  linear-gradient(180deg, #070a0f, #0b0f14);
+      color: rgba(255,255,255,.92);
     }
-    .mini strong{display:block; font-weight:650; margin-bottom:6px}
-    .mini p{margin:0; color:var(--muted); font-size:13px; line-height:1.55}
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-      margin:18px 0 0;
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:start}
+    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .section-title{
+      margin:0 0 10px;
+      font-size:28px;
+      line-height:1.15;
+      font-weight: 520;
     }
-    .feature{padding:18px}
-    .feature h3{margin:0 0 8px; font-size:15px}
-    .feature p{margin:0; color:var(--muted); font-size:13px; line-height:1.6}
-    .section{
-      margin:22px 0 0;
+    .lead{
+      margin:0;
+      color: var(--muted);
+      font-size:15px;
+      line-height:1.75;
+      max-width: 70ch;
+    }
+    .lead.dark{color: rgba(255,255,255,.76)}
+    .memo{
+      margin-top:18px;
       padding:22px;
-    }
-    .section h2{margin:0 0 10px; font-size:18px}
-    .section p{margin:0; color:var(--muted); line-height:1.7; font-size:14px}
-    .cols{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
-      margin-top:14px;
-    }
-    .list{
-      margin:10px 0 0;
-      padding:0;
-      list-style:none;
-    }
-    .list li{
-      padding:10px 12px;
+      border-radius: var(--radius);
       border:1px solid var(--line);
-      border-radius:14px;
-      background: rgba(255,255,255,.02);
-      margin-bottom:10px;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.55;
+      background: rgba(255,255,255,.55);
+      box-shadow: var(--shadow);
     }
-    .divider{
-      height:1px; background:var(--line); margin:18px 0;
+    .memo ul{margin:12px 0 0; padding-left:18px}
+    .memo li{margin:8px 0; color:#2a3340; line-height:1.65; font-size:14px}
+    .principles{
+      margin-top:18px;
+      display:grid; gap:14px;
     }
-    .contact{
+    .card{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      padding:18px;
+    }
+    .card h3{
+      margin:0 0 8px;
+      font-size:15px;
+      font-weight: 600;
+      color: rgba(255,255,255,.94);
+    }
+    .card p{
+      margin:0;
+      color: rgba(255,255,255,.72);
+      line-height:1.7;
+      font-size:14px;
+    }
+    /* Contact */
+    .contactWrap{
       display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:14px;
+      grid-template-columns: 1.05fr .95fr;
+      gap:22px;
       align-items:start;
     }
-    form{
-      display:grid; gap:10px;
-    }
-    label{font-size:12px; color:var(--muted)}
+    form{display:grid; gap:10px}
+    label{font-size:12px; color: var(--muted)}
     input, textarea, select{
       width:100%;
       padding:12px 12px;
       border-radius:12px;
-      border:1px solid var(--line);
-      background: rgba(0,0,0,.18);
-      color:var(--text);
+      border:1px solid rgba(17,24,39,.14);
+      background: rgba(255,255,255,.70);
+      color: #111827;
       outline:none;
       font-size:14px;
     }
     textarea{min-height:120px; resize:vertical}
-    .row{display:grid; grid-template-columns: 1fr 1fr; gap:10px}
-    .helper{
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    .formNote{
       font-size:12px;
-      color:var(--muted);
-      line-height:1.5;
+      color: var(--muted);
+      line-height:1.6;
+      margin-top:6px;
     }
+    .sidebox{
+      border-radius: var(--radius);
+      border:1px solid rgba(17,24,39,.12);
+      background: rgba(255,255,255,.55);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .sidebox h3{margin:0 0 8px; font-size:14px}
+    .sidebox p{margin:0; color:#334155; font-size:14px; line-height:1.7}
     footer{
-      padding:22px 0 34px;
-      color:var(--muted);
+      padding:26px 0 36px;
+      color: rgba(17,24,39,.70);
       font-size:12px;
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
+      border-top: 1px solid rgba(17,24,39,.10);
+      background: var(--stone2);
     }
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-      .cols{grid-template-columns:1fr}
-      .contact{grid-template-columns:1fr}
-      h1{font-size:36px}
+    footer .foot{
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      align-items:center;
+    }
+    footer a{color: rgba(17,24,39,.80); text-decoration:underline; text-underline-offset:3px}
+    /* Responsive */
+    @media (max-width: 980px){
+      h1{font-size:38px}
+      .grid2{grid-template-columns:1fr}
+      .grid3{grid-template-columns:1fr}
+      .contactWrap{grid-template-columns:1fr}
+      .hero{min-height: 72vh; padding-top:110px}
+    }
+    @media (max-width: 520px){
+      .row{grid-template-columns:1fr}
+      h1{font-size:34px}
+      .topbar{padding:14px 0}
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <header>
-      <a class="brand" href="/">
-        <div class="mark" aria-hidden="true"></div>
-        <div>
-          <strong>COVALENT MATCH</strong>
-          <span>Founder-led search • Discreet by design</span>
-        </div>
+  <header>
+    <div class="wrap topbar">
+      <a class="brand" href="index.html" aria-label="Covalent Match home">
+        <strong class="serif">Covalent Match</strong>
+        <small>Founder-led search • Discreet by design</small>
       </a>
       <nav>
-        <a class="pill" href="ar.html" lang="ar" dir="rtl">العربية</a>
-        <a class="cta" href="#contact">Contact</a>
+        <a class="navlink" href="#approach">Approach</a>
+        <a class="navlink" href="ar.html" lang="ar" dir="rtl">العربية</a>
+        <a class="navcta" href="#contact">Contact</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section class="hero">
-        <div class="card hero-main">
-          <div class="kicker"><span class="dot"></span> Each search is conducted discreetly through first-hand industry networks and direct referrals</div>
-          <h1>Calm, premium hiring — <br/>without the noise.</h1>
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="kicker"><span class="dot"></span> Each search is conducted discreetly through first-hand industry networks and direct referrals</div>
+        <h1 class="serif">Advisory-led search, conducted with precision and discretion.</h1>
+        <p class="sub">
+          Founder-led engagement for pharmaceutical and food-industry companies operating globally.
+          Designed for regulated, high-stakes environments where hiring accuracy is critical.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#contact">Begin a conversation</a>
+          <a class="btn" href="#approach">Our approach</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="stone">
+      <div class="wrap grid2">
+        <div>
+          <h2 class="section-title serif">Who we work with</h2>
           <p class="lead">
-            Covalent Match supports pharmaceutical and food-industry companies with targeted, founder-led search.
-            Built for teams needing multiple hires and for organisations requiring key signings — globally.
+            We partner with a small number of organisations where discretion and judgement matter as much as outcome.
           </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#contact">Contact us</a>
-            <a class="btn" href="#approach">Our approach</a>
+          <div class="memo">
+            <p class="lead" style="margin:0;color:#2a3340">
+              We are best aligned with clients who value precision over volume and who can commit to more than one search when building capabilities.
+            </p>
+            <ul>
+              <li>Pharmaceutical and food companies at launch or in growth phases</li>
+              <li>Organisations building entire teams</li>
+              <li>Businesses making confidential, high-impact appointments</li>
+            </ul>
           </div>
         </div>
+        <div>
+          <h2 class="section-title serif">Focus</h2>
+          <p class="lead">
+            Scientific and regulated environments demand a different standard of search: calm execution, deep qualification, and trusted access.
+          </p>
+          <div class="memo" style="margin-top:18px">
+            <p class="lead" style="margin:0;color:#2a3340">
+              No mass posting. No generic outreach. Just discreet, targeted execution through first-hand networks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <aside class="card hero-side">
-          <div class="mini">
-            <strong>Positioning</strong>
-            <p>Exclusive, selective, and discreet. Premium outcomes over volume activity.</p>
-          </div>
-          <div class="mini">
-            <strong>Who we serve</strong>
-            <p>New ventures building teams and established companies needing critical hires.</p>
-          </div>
-          <div class="mini">
-            <strong>Focus</strong>
-            <p>Pharma and food industry talent. First-hand market knowledge, not generalist recruiting.</p>
-          </div>
-        </aside>
-      </section>
-
-      <section class="grid">
-        <div class="card feature">
-          <h3>Discreet search</h3>
-          <p>Stealth process designed to protect sensitive hiring and market moves.</p>
-        </div>
-        <div class="card feature">
-          <h3>Founder-led</h3>
-          <p>One operator who works inside the industry — not junior outreach or mass posting.</p>
-        </div>
-        <div class="card feature">
-          <h3>Right first time</h3>
-          <p>Premium service where every introduction is deliberate and qualification is deep.</p>
-        </div>
-      </section>
-
-      <section id="approach" class="card section">
-        <h2>How we work</h2>
-        <p>
+    <section id="approach" class="dark">
+      <div class="wrap">
+        <h2 class="section-title serif" style="color:rgba(255,255,255,.94)">How we work</h2>
+        <p class="lead dark">
           We prioritise precision and trust: limited mandates, constant communication, and a network-led approach.
-          We partner best with clients who commit to more than one search.
         </p>
 
-        <div class="cols">
-          <div>
-            <ul class="list">
-              <li><strong style="color:var(--text)">Selective mandates</strong><br/>We stay small on purpose — exclusivity is the model.</li>
-              <li><strong style="color:var(--text)">Network-led</strong><br/>First-hand industry relationships, direct referrals, and discreet outreach.</li>
-              <li><strong style="color:var(--text)">Stealth & targeted</strong><br/>No loud marketing. No mass messaging. Just targeted execution.</li>
-            </ul>
+        <div class="principles">
+          <div class="card">
+            <h3>Selective mandates</h3>
+            <p>We stay intentionally small — exclusivity protects focus, discretion, and outcomes.</p>
           </div>
-          <div>
-            <ul class="list">
-              <li><strong style="color:var(--text)">Pharma standards</strong><br/>Quality expectations aligned with regulated, high-stakes environments.</li>
-              <li><strong style="color:var(--text)">Constant comms</strong><br/>You stay informed — concise updates, clear timelines, no surprises.</li>
-              <li><strong style="color:var(--text)">Team builds & key signings</strong><br/>From full-function builds to critical leadership/technical hires.</li>
-            </ul>
+          <div class="card">
+            <h3>Network-led execution</h3>
+            <p>First-hand industry relationships, direct referrals, and discreet outreach.</p>
+          </div>
+          <div class="card">
+            <h3>Regulated-environment mindset</h3>
+            <p>Designed for high-stakes settings where standards, trust, and accuracy are non-negotiable.</p>
+          </div>
+          <div class="card">
+            <h3>Team builds & key signings</h3>
+            <p>From full-function builds to critical leadership/technical hires.</p>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="contact" class="card section">
-        <h2>Contact us</h2>
-        <p>Share a brief overview and we’ll respond discreetly.</p>
-        <div class="divider"></div>
+    <section id="contact" class="stone alt">
+      <div class="wrap">
+        <h2 class="section-title serif">Contact</h2>
+        <p class="lead">If discretion and precision are critical to your next decision, we invite you to reach out.</p>
 
-        <div class="contact">
-          <div>
-            <form id="leadForm">
+        <div style="height:18px"></div>
+
+        <div class="contactWrap">
+          <div class="memo" style="margin-top:0">
+            <!-- Netlify Forms: sends submissions to Netlify dashboard + email notifications you configure -->
+            <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact" />
+              <p style="display:none">
+                <label>Don’t fill this out: <input name="bot-field" /></label>
+              </p>
+
               <div class="row">
                 <div>
                   <label for="name">Name</label>
@@ -343,8 +396,8 @@
                   <input id="email" name="email" type="email" autocomplete="email" required />
                 </div>
                 <div>
-                  <label for="region">Primary market</label>
-                  <select id="region" name="region" required>
+                  <label for="market">Primary market</label>
+                  <select id="market" name="market" required>
                     <option value="" disabled selected>Select…</option>
                     <option>Saudi Arabia</option>
                     <option>Middle East</option>
@@ -376,15 +429,21 @@
                 </div>
               </div>
 
-              <div>
-                <label for="timeline">Timeline</label>
-                <select id="timeline" name="timeline" required>
-                  <option value="" disabled selected>Select…</option>
-                  <option>Immediate (0–30 days)</option>
-                  <option>Near term (1–3 months)</option>
-                  <option>Planned (3–6 months)</option>
-                  <option>Exploratory</option>
-                </select>
+              <div class="row">
+                <div>
+                  <label for="timeline">Timeline</label>
+                  <select id="timeline" name="timeline" required>
+                    <option value="" disabled selected>Select…</option>
+                    <option>Immediate (0–30 days)</option>
+                    <option>Near term (1–3 months)</option>
+                    <option>Planned (3–6 months)</option>
+                    <option>Exploratory</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="website">Company website (optional)</label>
+                  <input id="website" name="website" />
+                </div>
               </div>
 
               <div>
@@ -392,74 +451,44 @@
                 <textarea id="message" name="message" placeholder="Role(s), seniority, location, confidentiality constraints, and any key context…" required></textarea>
               </div>
 
-              <button class="btn primary" type="submit">Send</button>
-              <div class="helper">This form opens your email app with a prepared message. Later, you can switch to server-side form handling without redesign.</div>
+              <button class="btn primary" type="submit" style="color:#fff; border-color: rgba(183,157,90,.55); background: linear-gradient(135deg, rgba(183,157,90,.40), rgba(183,157,90,.18));">
+                Send
+              </button>
+
+              <div class="formNote">
+                This form submits securely via Netlify (no email app pop-ups). We reply discreetly.
+              </div>
             </form>
           </div>
 
-          <div>
-            <div class="mini">
-              <strong>What happens next</strong>
-              <p>
-                We review quickly and respond discreetly. If aligned, we’ll propose a short call and clarify scope, confidentiality, and the ideal profile.
-              </p>
-            </div>
-            <div class="mini">
-              <strong>Email</strong>
-              <p><a href="mailto:founder@covalentmatch.com" style="color:var(--accent); text-decoration:none;">founder@covalentmatch.com</a><br/></p>
-            </div>
-            <div class="mini">
-              <strong>Note</strong>
-              <p>Client logos and case studies can be added later once approvals exist.</p>
-            </div>
+          <div class="sidebox">
+            <h3>What happens next</h3>
+            <p>We review quickly and respond discreetly. If aligned, we’ll propose a short call and clarify scope, confidentiality, and the ideal profile.</p>
+            <div style="height:12px"></div>
+            <h3>Email</h3>
+            <p><a href="mailto:founder@covalentmatch.com" style="color:var(--accent); text-decoration:none">founder@covalentmatch.com</a></p>
+            <div style="height:12px"></div>
+            <h3>Note</h3>
+            <p>Client logos and case studies can be added later once approvals exist.</p>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
     <footer>
-      <div>© <span id="year"></span> Covalent Match. All rights reserved.</div>
-      <div>Discreet by design • Premium outcomes</div>
+      <div class="wrap foot">
+        <div>© <span id="year"></span> Covalent Match</div>
+        <div>
+          <a href="privacy.html">Privacy</a>
+          &nbsp;•&nbsp;
+          <a href="ar.html" lang="ar" dir="rtl">العربية</a>
+        </div>
+      </div>
     </footer>
-  </div>
-
-  <!-- Google Analytics (optional) -->
-  <!-- Replace G-XXXXXXXXXX with your Measurement ID when ready -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
+  </main>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Mailto-based form submit (no backend required)
-    document.getElementById("leadForm").addEventListener("submit", function(e){
-      e.preventDefault();
-
-      const data = new FormData(e.target);
-      const to = "founder@covalentmatch.com";
-      const subject = "Covalent Match — Contact request";
-      const lines = [
-        `Name: ${data.get("name")}`,
-        `Company: ${data.get("company")}`,
-        `Work email: ${data.get("email")}`,
-        `Primary market: ${data.get("region")}`,
-        `Industry: ${data.get("industry")}`,
-        `Hiring need: ${data.get("need")}`,
-        `Timeline: ${data.get("timeline")}`,
-        ``,
-        `Message:`,
-        `${data.get("message")}`
-      ];
-      const body = encodeURIComponent(lines.join("\n"));
-      window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${body}`;
-    });
   </script>
 </body>
 </html>
