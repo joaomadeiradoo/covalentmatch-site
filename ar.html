@@ -3,286 +3,379 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>كوفالنت ماتش — بحث تنفيذي سري</title>
-  <meta name="description" content="بحث تنفيذي بسرّية عالية بقيادة المؤسس لشركات الأدوية والغذاء في السعودية والشرق الأوسط." />
+  <title>كوفالنت ماتش — نهج استشاري في البحث التنفيذي</title>
+  <meta name="description" content="بحث تنفيذي بنهج استشاري، بدقة وسرية. بقيادة المؤسس، عبر شبكات مباشرة وإحالات موثوقة، للسعودية والشرق الأوسط." />
+  <meta name="robots" content="index,follow" />
   <style>
     :root{
-      --bg:#0b0f14; --card:#0f1620; --text:#e9eef6; --muted:#a8b3c7;
-      --line:rgba(255,255,255,.08); --accent:#c9b37e; --radius:20px;
-      --max:1120px; --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --ink:#0b0f14;
+      --stone:#f3efe6;
+      --stone2:#ece6db;
+      --text:#12161c;
+      --muted:#4b5563;
+      --line:rgba(17,24,39,.12);
+      --lineDark:rgba(255,255,255,.14);
+      --accent:#b79d5a;
+      --radius:18px;
+      --max:1120px;
+      --shadow: 0 18px 60px rgba(0,0,0,.22);
     }
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, "Noto Sans Arabic", "Noto Naskh Arabic", sans-serif;
-      background:
-        radial-gradient(1000px 600px at 20% 10%, rgba(201,179,126,.10), transparent 60%),
-        linear-gradient(180deg, #06080c 0%, var(--bg) 35%, #070b10 100%);
       color:var(--text);
+      background: var(--stone);
     }
-    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
-    header{display:flex; align-items:center; justify-content:space-between; padding:10px 0 18px; gap:10px; flex-wrap:wrap;}
     a{color:inherit; text-decoration:none}
-    .brand{display:flex; align-items:center; gap:12px}
-    .mark{
-      width:42px; height:42px; border-radius:14px;
-      background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
-      border:1px solid var(--line); box-shadow:0 10px 30px rgba(0,0,0,.35);
-      position:relative; overflow:hidden;
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 22px}
+    .serif{
+      font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     }
-    .mark:after{
-      content:""; position:absolute; inset:-40%;
-      background: radial-gradient(circle, rgba(201,179,126,.25), transparent 55%);
-      transform: rotate(20deg);
+    header{position:absolute; left:0; right:0; top:0; z-index:50;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding:18px 0;
+      color: rgba(255,255,255,.92);
+      flex-wrap:wrap;
     }
-    .pill{
-      font-size:13px; padding:10px 12px;
-      border:1px solid var(--line); border-radius:999px;
-      background: rgba(255,255,255,.02);
+    .brand{display:flex; flex-direction:column; gap:3px}
+    .brand strong{font-size:18px; letter-spacing:.6px}
+    .brand small{font-size:12px; color: rgba(255,255,255,.70)}
+    nav{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    .navlink{
+      font-size:13px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.15);
+      color: rgba(255,255,255,.86);
+      backdrop-filter: blur(8px);
     }
-    .cta{
-      font-size:13px; padding:10px 14px; border-radius:999px;
-      background: linear-gradient(135deg, rgba(201,179,126,.18), rgba(201,179,126,.08));
-      border:1px solid rgba(201,179,126,.35);
+    .navcta{
+      font-size:13px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid rgba(183,157,90,.50);
+      background: linear-gradient(135deg, rgba(183,157,90,.24), rgba(183,157,90,.10));
+      color: rgba(255,255,255,.92);
     }
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-      border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow);
+    .hero{
+      position:relative;
+      min-height: 78vh;
+      display:flex;
+      align-items:flex-end;
+      padding: 120px 0 46px;
+      background:
+        radial-gradient(900px 520px at 30% 20%, rgba(183,157,90,.22), transparent 58%),
+        linear-gradient(180deg, rgba(0,0,0,.68), rgba(0,0,0,.70)),
+        url("assets/hero-ar.jpg") center/cover no-repeat;
+      background-blend-mode: screen, normal, normal;
+      color: rgba(255,255,255,.92);
     }
-    .hero{padding:18px 0; display:grid; grid-template-columns: 1.25fr .75fr; gap:14px}
-    .hero-main{padding:26px}
+    .hero::after{content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.76)); pointer-events:none;}
+    .hero > .wrap{position:relative; z-index:5}
     .kicker{
-      display:inline-flex; align-items:center; gap:10px;
-      font-size:12px; color:var(--muted);
-      padding:8px 12px; border-radius:999px; border:1px solid var(--line);
-      background: rgba(255,255,255,.02);
+      display:inline-flex; gap:10px; align-items:center;
+      font-size:12px; color: rgba(255,255,255,.78);
+      padding:8px 12px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(0,0,0,.18);
+      backdrop-filter: blur(8px);
     }
-    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent); box-shadow:0 0 0 6px rgba(201,179,126,.12)}
-    h1{margin:14px 0 10px; font-size:38px; line-height:1.1}
-    .lead{margin:0 0 16px; color:var(--muted); line-height:1.8; font-size:15px}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent); box-shadow:0 0 0 6px rgba(183,157,90,.14)}
+    h1{margin:16px 0 10px; font-size:44px; line-height:1.10; font-weight:520; max-width: 22ch}
+    .sub{margin:0 0 20px; color: rgba(255,255,255,.78); font-size:16px; line-height:1.9; max-width: 70ch}
+    .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding:12px 14px; border-radius:12px;
-      border:1px solid var(--line); background: rgba(255,255,255,.03);
-      font-size:14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(0,0,0,.18);
+      font-size:14px; color: rgba(255,255,255,.90);
+      backdrop-filter: blur(8px);
     }
-    .btn.primary{border-color:rgba(201,179,126,.45); background: linear-gradient(135deg, rgba(201,179,126,.22), rgba(201,179,126,.10));}
-    .hero-side{padding:16px}
-    .mini{
-      padding:14px; border-radius:16px;
-      border:1px solid var(--line); background: rgba(0,0,0,.14);
-      margin-bottom:12px;
+    .btn.primary{border-color: rgba(183,157,90,.55); background: linear-gradient(135deg, rgba(183,157,90,.26), rgba(183,157,90,.12));}
+    section{padding:56px 0}
+    .stone{background: var(--stone)}
+    .stone.alt{background: var(--stone2)}
+    .dark{
+      background: radial-gradient(900px 520px at 20% 10%, rgba(183,157,90,.12), transparent 60%),
+                  linear-gradient(180deg, #070a0f, #0b0f14);
+      color: rgba(255,255,255,.92);
     }
-    .mini strong{display:block; margin-bottom:6px}
-    .mini p{margin:0; color:var(--muted); font-size:13px; line-height:1.7}
-    .section{margin-top:14px; padding:20px}
-    .divider{height:1px; background:var(--line); margin:14px 0}
-    .contact{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    .grid2{display:grid; grid-template-columns:1fr 1fr; gap:26px}
+    .section-title{margin:0 0 10px; font-size:28px; line-height:1.2; font-weight:520}
+    .lead{margin:0; color: var(--muted); font-size:15px; line-height:1.9; max-width: 70ch}
+    .lead.dark{color: rgba(255,255,255,.76)}
+    .memo{
+      margin-top:18px; padding:22px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.55);
+      box-shadow: var(--shadow);
+    }
+    .memo ul{margin:12px 0 0; padding-right:18px}
+    .memo li{margin:8px 0; color:#2a3340; line-height:1.85; font-size:14px}
+    .principles{margin-top:18px; display:grid; gap:14px}
+    .card{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      padding:18px;
+    }
+    .card h3{margin:0 0 8px; font-size:15px; font-weight:700; color: rgba(255,255,255,.94)}
+    .card p{margin:0; color: rgba(255,255,255,.72); line-height:1.9; font-size:14px}
+    .contactWrap{display:grid; grid-template-columns: 1.05fr .95fr; gap:22px}
+    form{display:grid; gap:10px}
+    label{font-size:12px; color: var(--muted)}
     input, textarea, select{
       width:100%; padding:12px 12px; border-radius:12px;
-      border:1px solid var(--line); background: rgba(0,0,0,.18); color:var(--text);
-      font-size:14px; outline:none;
+      border:1px solid rgba(17,24,39,.14);
+      background: rgba(255,255,255,.70);
+      color:#111827; outline:none; font-size:14px;
     }
     textarea{min-height:120px; resize:vertical}
-    label{font-size:12px; color:var(--muted)}
-    form{display:grid; gap:10px}
     .row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
-    footer{padding:22px 0 34px; color:var(--muted); font-size:12px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;}
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .contact{grid-template-columns:1fr}
+    .sidebox{
+      border-radius: var(--radius);
+      border:1px solid rgba(17,24,39,.12);
+      background: rgba(255,255,255,.55);
+      padding:18px;
+      box-shadow: var(--shadow);
+    }
+    .sidebox h3{margin:0 0 8px; font-size:14px}
+    .sidebox p{margin:0; color:#334155; font-size:14px; line-height:1.9}
+    footer{
+      padding:26px 0 36px;
+      color: rgba(17,24,39,.70);
+      font-size:12px;
+      border-top: 1px solid rgba(17,24,39,.10);
+      background: var(--stone2);
+    }
+    footer .foot{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:center}
+    footer a{color: rgba(17,24,39,.80); text-decoration:underline; text-underline-offset:3px}
+    @media (max-width: 980px){
+      h1{font-size:36px}
+      .grid2{grid-template-columns:1fr}
+      .contactWrap{grid-template-columns:1fr}
+      .hero{min-height: 72vh; padding-top:110px}
+    }
+    @media (max-width: 520px){
+      .row{grid-template-columns:1fr}
+      h1{font-size:32px}
+      .topbar{padding:14px 0}
     }
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <a class="brand" href="ar.html">
-        <div class="mark" aria-hidden="true"></div>
-        <div>
-          <strong style="letter-spacing:.4px">كوفالنت ماتش</strong>
-          <div style="color:var(--muted); font-size:12px; margin-top:2px">بحث تنفيذي بقيادة المؤسس • بسرّية عالية</div>
-        </div>
+  <header>
+    <div class="wrap topbar">
+      <a class="brand" href="ar.html" aria-label="Covalent Match الصفحة الرئيسية">
+        <strong class="serif">Covalent Match</strong>
+        <small>بحث بقيادة المؤسس • سرية من الأساس</small>
       </a>
-      <div style="display:flex; gap:10px; align-items:center">
-        <a class="pill" href="index.html" lang="en" dir="ltr">English</a>
-        <a class="cta" href="#contact">تواصل معنا</a>
-      </div>
-    </header>
+      <nav>
+        <a class="navlink" href="#approach">المنهج</a>
+        <a class="navlink" href="index.html" lang="en" dir="ltr">English</a>
+        <a class="navcta" href="#contact">تواصل</a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
     <section class="hero">
-      <div class="card hero-main">
-        <div class="kicker"><span class="dot"></span> يتم إجراء كل عملية بحث بسرّية عبر شبكات مهنية مباشرة وإحالات موثوقة</div>
-        <h1>توظيف راقٍ بهدوء — <br/>بدون ضوضاء.</h1>
-        <p class="lead">
-          نساعد الشركات في قطاع الأدوية وقطاع الغذاء في <strong style="color:var(--text)">السعودية والشرق الأوسط</strong>
-          عبر بحث تنفيذي دقيق بقيادة المؤسس. مناسب لبناء فرق كاملة أو لإتمام تعيينات محورية بسرّية.
+      <div class="wrap">
+        <div class="kicker"><span class="dot"></span> يُنفَّذ كل بحث بسرّية عبر شبكات مباشرة وإحالات موثوقة</div>
+        <h1 class="serif">نهج استشاري في البحث التنفيذي — بدقة وسرية.</h1>
+        <p class="sub">
+          تواصل مباشر مع المؤسس لشركات الأدوية والأغذية في <strong>السعودية والشرق الأوسط</strong>.
+          مصمم لبيئات منظمة وعالية المخاطر حيث تكون دقة الاختيار أمرًا حاسمًا.
         </p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a class="btn primary" href="#contact">تواصل معنا</a>
-          <a class="btn" href="#approach">منهجية العمل</a>
+        <div class="actions">
+          <a class="btn primary" href="#contact">ابدأ محادثة</a>
+          <a class="btn" href="#approach">منهجنا</a>
         </div>
       </div>
-
-      <aside class="card hero-side">
-        <div class="mini">
-          <strong>تميّزنا</strong>
-          <p>خدمة حصرية وانتقائية تركّز على الجودة والنتائج، لا على الحجم.</p>
-        </div>
-        <div class="mini">
-          <strong>لمن نخدم</strong>
-          <p>شركات جديدة تبني فرقها، وشركات قائمة تحتاج إلى تعيينات حساسة ومحورية.</p>
-        </div>
-        <div class="mini">
-          <strong>التركيز</strong>
-          <p>مواهب الأدوية والغذاء — معرفة سوق مباشرة، وليست توظيفًا عامًا.</p>
-        </div>
-      </aside>
     </section>
 
-    <section id="approach" class="card section">
-      <h2 style="margin:0 0 10px; font-size:18px">منهجية العمل</h2>
-      <p style="margin:0; color:var(--muted); line-height:1.9; font-size:14px">
-        نعمل بمنهجية تعتمد على الثقة والدقة: مهام محدودة، تواصل مستمر، وشبكات مهنية مباشرة.
-        نفضّل الشراكات مع العملاء الذين يلتزمون بأكثر من عقد واحد.
-      </p>
-      <div class="divider"></div>
-      <ul style="margin:0; padding:0; list-style:none; display:grid; gap:10px;">
-        <li style="padding:12px; border:1px solid var(--line); border-radius:14px; background: rgba(255,255,255,.02); color:var(--muted); line-height:1.8">
-          <strong style="color:var(--text)">بحث سري</strong><br/>يحمي تحركات التوظيف الحسّاسة ويحافظ على السرية.
-        </li>
-        <li style="padding:12px; border:1px solid var(--line); border-radius:14px; background: rgba(255,255,255,.02); color:var(--muted); line-height:1.8">
-          <strong style="color:var(--text)">قيادة المؤسس</strong><br/>بدون توظيف جماعي أو رسائل عشوائية — عمل مباشر ومركّز.
-        </li>
-        <li style="padding:12px; border:1px solid var(--line); border-radius:14px; background: rgba(255,255,255,.02); color:var(--muted); line-height:1.8">
-          <strong style="color:var(--text)">جودة من أول مرة</strong><br/>كل مرشح يتم تقديمه بعد تقييم عميق ومعايير عالية.
-        </li>
-      </ul>
-    </section>
-
-    <section id="contact" class="card section">
-      <h2 style="margin:0 0 10px; font-size:18px">تواصل معنا</h2>
-      <p style="margin:0; color:var(--muted); line-height:1.9; font-size:14px">أرسل نبذة مختصرة وسنرد بسرّية.</p>
-      <div class="divider"></div>
-
-      <div class="contact">
+    <section class="stone">
+      <div class="wrap grid2">
         <div>
-          <form id="leadFormAr">
-            <div class="row">
-              <div>
-                <label for="name">الاسم</label>
-                <input id="name" name="name" required />
-              </div>
-              <div>
-                <label for="company">الشركة</label>
-                <input id="company" name="company" required />
-              </div>
-            </div>
-
-            <div class="row">
-              <div>
-                <label for="email">البريد المهني</label>
-                <input id="email" name="email" type="email" required />
-              </div>
-              <div>
-                <label for="region">السوق</label>
-                <select id="region" name="region" required>
-                  <option value="" disabled selected>اختر…</option>
-                  <option>السعودية</option>
-                  <option>الشرق الأوسط</option>
-                  <option>أوروبا</option>
-                  <option>أمريكا الشمالية</option>
-                  <option>أخرى</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="row">
-              <div>
-                <label for="industry">القطاع</label>
-                <select id="industry" name="industry" required>
-                  <option value="" disabled selected>اختر…</option>
-                  <option>الأدوية</option>
-                  <option>الغذاء</option>
-                  <option>أخرى</option>
-                </select>
-              </div>
-              <div>
-                <label for="need">نوع الاحتياج</label>
-                <select id="need" name="need" required>
-                  <option value="" disabled selected>اختر…</option>
-                  <option>بناء فريق (عدة وظائف)</option>
-                  <option>تعيين محوري (وظيفة حساسة)</option>
-                  <option>بحث سري / توظيف غير معلن</option>
-                </select>
-              </div>
-            </div>
-
-            <div>
-              <label for="timeline">الإطار الزمني</label>
-              <select id="timeline" name="timeline" required>
-                <option value="" disabled selected>اختر…</option>
-                <option>عاجل (0–30 يوم)</option>
-                <option>قريب (1–3 أشهر)</option>
-                <option>مخطط (3–6 أشهر)</option>
-                <option>استكشافي</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="message">الرسالة</label>
-              <textarea id="message" name="message" placeholder="الوظائف المطلوبة، المستوى، الموقع، متطلبات السرية، وأي سياق مهم…" required></textarea>
-            </div>
-
-            <button class="btn primary" type="submit">إرسال</button>
-            <div style="font-size:12px; color:var(--muted); line-height:1.7">
-              سيتم فتح تطبيق البريد لديك مع رسالة مجهزة. لاحقًا يمكن تحويلها إلى نموذج إرسال مباشر دون تغيير التصميم.
-            </div>
-          </form>
-        </div>
-
-        <div>
-          <div class="mini">
-            <strong>البريد</strong>
-            <p><a href="mailto:founder@covalentmatch.com" style="color:var(--accent)">founder@covalentmatch.com</a><br/>
-              <span style="font-size:12px; color:var(--muted)">(ستقوم بإنشاء هذا البريد بعد ربط النطاق.)</span></p>
+          <h2 class="section-title serif">من نعمل معهم</h2>
+          <p class="lead">نتعاون مع عدد محدود من الجهات عندما تكون السرية والحُكم الرشيد بقدر أهمية النتيجة.</p>
+          <div class="memo">
+            <p class="lead" style="margin:0;color:#2a3340">
+              ننسجم أكثر مع العملاء الذين يقدّرون الدقة على حساب الكم، والذين يمكنهم الالتزام بأكثر من عملية بحث عند بناء القدرات.
+            </p>
+            <ul>
+              <li>شركات الأدوية والأغذية في مرحلة التأسيس أو النمو</li>
+              <li>جهات تبني فرقًا كاملة</li>
+              <li>تعيينات سرية عالية التأثير</li>
+            </ul>
           </div>
-          <div class="mini">
-            <strong>الخطوة التالية</strong>
-            <p>نراجع الطلب ونرد بسرّية. إذا كان هناك توافق، نقترح مكالمة قصيرة لتحديد النطاق والمتطلبات.</p>
+        </div>
+        <div>
+          <h2 class="section-title serif">التركيز</h2>
+          <p class="lead">البيئات العلمية والمنظمة تتطلب معيارًا مختلفًا: تنفيذ هادئ، تقييم عميق، ووصول موثوق.</p>
+          <div class="memo" style="margin-top:18px">
+            <p class="lead" style="margin:0;color:#2a3340">
+              لا نشر جماعي. لا تواصل عشوائي. فقط تنفيذ مستهدف بسرية عبر علاقات مباشرة.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="approach" class="dark">
+      <div class="wrap">
+        <h2 class="section-title serif" style="color:rgba(255,255,255,.94)">كيف نعمل</h2>
+        <p class="lead dark">نُقدّم الدقة والثقة: مهام محدودة، تواصل مستمر، ونهج يعتمد على الشبكات.</p>
+
+        <div class="principles">
+          <div class="card">
+            <h3>مهام انتقائية</h3>
+            <p>نبقى صغارًا عن قصد — الحصرية تحمي التركيز والسرية وجودة النتائج.</p>
+          </div>
+          <div class="card">
+            <h3>تنفيذ عبر الشبكات</h3>
+            <p>علاقات مباشرة داخل القطاع، إحالات موثوقة، وتواصل محسوب.</p>
+          </div>
+          <div class="card">
+            <h3>عقلية البيئات المنظمة</h3>
+            <p>مصمم لبيئات عالية المخاطر حيث المعايير والثقة والدقة لا تقبل المساومة.</p>
+          </div>
+          <div class="card">
+            <h3>بناء فرق وتعيينات محورية</h3>
+            <p>من بناء وظائف كاملة إلى أدوار قيادية/تقنية حرجة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="stone alt">
+      <div class="wrap">
+        <h2 class="section-title serif">تواصل</h2>
+        <p class="lead">إذا كانت السرية والدقة مهمة لقرارك القادم، نرحّب بتواصلك.</p>
+
+        <div style="height:18px"></div>
+
+        <div class="contactWrap">
+          <div class="memo" style="margin-top:0">
+            <form name="contact-ar" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact-ar" />
+              <p style="display:none">
+                <label>لا تملأ هذا الحقل: <input name="bot-field" /></label>
+              </p>
+
+              <div class="row">
+                <div>
+                  <label for="name">الاسم</label>
+                  <input id="name" name="name" required />
+                </div>
+                <div>
+                  <label for="company">الشركة</label>
+                  <input id="company" name="company" required />
+                </div>
+              </div>
+
+              <div class="row">
+                <div>
+                  <label for="email">البريد المهني</label>
+                  <input id="email" name="email" type="email" required />
+                </div>
+                <div>
+                  <label for="market">السوق</label>
+                  <select id="market" name="market" required>
+                    <option value="" disabled selected>اختر…</option>
+                    <option>السعودية</option>
+                    <option>الشرق الأوسط</option>
+                    <option>أوروبا</option>
+                    <option>أمريكا الشمالية</option>
+                    <option>أخرى</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div>
+                  <label for="industry">القطاع</label>
+                  <select id="industry" name="industry" required>
+                    <option value="" disabled selected>اختر…</option>
+                    <option>الأدوية</option>
+                    <option>الأغذية</option>
+                    <option>أخرى</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="need">الاحتياج</label>
+                  <select id="need" name="need" required>
+                    <option value="" disabled selected>اختر…</option>
+                    <option>بناء فريق (عدة وظائف)</option>
+                    <option>تعيين محوري (وظيفة حرجة)</option>
+                    <option>بحث سري / توظيف غير معلن</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div>
+                  <label for="timeline">الإطار الزمني</label>
+                  <select id="timeline" name="timeline" required>
+                    <option value="" disabled selected>اختر…</option>
+                    <option>عاجل (0–30 يوم)</option>
+                    <option>قريب (1–3 أشهر)</option>
+                    <option>مخطط (3–6 أشهر)</option>
+                    <option>استكشافي</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="website">موقع الشركة (اختياري)</label>
+                  <input id="website" name="website" />
+                </div>
+              </div>
+
+              <div>
+                <label for="message">الرسالة</label>
+                <textarea id="message" name="message" placeholder="الأدوار المطلوبة، المستوى، الموقع، متطلبات السرية، وأي سياق مهم…" required></textarea>
+              </div>
+
+              <button class="btn primary" type="submit">إرسال</button>
+              <div style="font-size:12px;color:var(--muted);line-height:1.8;margin-top:6px">
+                يتم إرسال النموذج عبر Netlify بشكل آمن. سنرد بسرّية.
+              </div>
+            </form>
+          </div>
+
+          <div class="sidebox">
+            <h3>ماذا بعد</h3>
+            <p>نراجع الطلب ونرد بسرّية. إذا كان هناك توافق، نقترح مكالمة قصيرة لتحديد النطاق ومتطلبات السرية والملف المثالي.</p>
+            <div style="height:12px"></div>
+            <h3>البريد</h3>
+            <p><a href="mailto:founder@covalentmatch.com" style="color:var(--accent); text-decoration:none">founder@covalentmatch.com</a></p>
+            <div style="height:12px"></div>
+            <h3>ملاحظة</h3>
+            <p>يمكن إضافة شعارات العملاء ودراسات الحالة لاحقًا بعد الموافقات.</p>
           </div>
         </div>
       </div>
     </section>
 
     <footer>
-      <div>© <span id="year"></span> Covalent Match</div>
-      <div>خدمة حصرية • نتائج راقية</div>
+      <div class="wrap foot">
+        <div>© <span id="year"></span> Covalent Match</div>
+        <div>
+          <a href="privacy-ar.html">الخصوصية</a>
+          &nbsp;•&nbsp;
+          <a href="index.html" lang="en" dir="ltr">English</a>
+        </div>
+      </div>
     </footer>
-  </div>
+  </main>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("leadFormAr").addEventListener("submit", function(e){
-      e.preventDefault();
-      const data = new FormData(e.target);
-      const to = "founder@covalentmatch.com";
-      const subject = "Covalent Match — طلب تواصل";
-      const lines = [
-        `الاسم: ${data.get("name")}`,
-        `الشركة: ${data.get("company")}`,
-        `البريد المهني: ${data.get("email")}`,
-        `السوق: ${data.get("region")}`,
-        `القطاع: ${data.get("industry")}`,
-        `نوع الاحتياج: ${data.get("need")}`,
-        `الإطار الزمني: ${data.get("timeline")}`,
-        ``,
-        `الرسالة:`,
-        `${data.get("message")}`
-      ];
-      const body = encodeURIComponent(lines.join("\n"));
-      window.location.href = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${body}`;
-    });
   </script>
 </body>
 </html>
