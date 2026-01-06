@@ -340,7 +340,16 @@
                 <textarea id="message" name="message" placeholder="الأدوار المطلوبة، المستوى، الموقع، متطلبات السرية، وأي سياق مهم…" required></textarea>
               </div>
 
-              <button class="btn primary" type="submit">إرسال</button>
+              <button
+  id="sendBtn"
+  class="btn primary"
+  type="submit"
+  disabled
+  style="color:#fff; border-color: rgba(183,157,90,.55); background: linear-gradient(135deg, rgba(183,157,90,.40), rgba(183,157,90,.18)); opacity:.6; cursor:not-allowed;"
+>
+  يرسل
+</button>
+
               <div style="font-size:12px;color:var(--muted);line-height:1.8;margin-top:6px">
                 سيتواصل معكم شريكنا المعتمد في المملكة العربية السعودية.
               </div>
