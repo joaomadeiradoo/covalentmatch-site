@@ -534,8 +534,13 @@
     const valid = form.checkValidity();
     sendBtn.disabled = !valid;
     sendBtn.style.opacity = valid ? '1' : '.6';
-    sendBtn.style.cursor = valid ? 'pointer' : 'not-allowed';
-  };
+sendBtn.style.cursor = valid ? 'pointer' : 'not-allowed';
+
+// Darker shade when active
+sendBtn.style.background = valid
+  ? 'linear-gradient(135deg, rgba(183,157,90,.65), rgba(183,157,90,.30))'
+  : 'linear-gradient(135deg, rgba(183,157,90,.40), rgba(183,157,90,.18))';
+};
 
   update();
   form.addEventListener('input', update);
