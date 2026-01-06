@@ -449,9 +449,16 @@
                 <textarea id="message" name="message" placeholder="Role(s), seniority, location, confidentiality constraints, and any key context…" required></textarea>
               </div>
 
-              <button class="btn primary" type="submit" style="color:#fff; border-color: rgba(183,157,90,.55); background: linear-gradient(135deg, rgba(183,157,90,.40), rgba(183,157,90,.18));">
-                Send
-              </button>
+              <<button
+  id="sendBtn"
+  class="btn primary"
+  type="submit"
+  disabled
+  style="color:#fff; border-color: rgba(183,157,90,.55); background: linear-gradient(135deg, rgba(183,157,90,.40), rgba(183,157,90,.18)); opacity:.6; cursor:not-allowed;"
+>
+  Send
+</button>
+
 
               
             </form>
