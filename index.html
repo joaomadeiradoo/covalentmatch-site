@@ -90,38 +90,57 @@
   display:flex;
   align-items:flex-end;
   padding: 120px 0 46px;
+
+  /* Image only (no dull blend modes) */
+  background: url("assets/hero.png") center/cover no-repeat;
+
+  color: rgba(255,255,255,.92);
+}
+
+/* The lighting (THIS is the mockup effect) */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+
   background:
-  /* Warm interior light from the right (mockup effect) */
-  radial-gradient(
-    900px 600px at 85% 40%,
-    rgba(255, 215, 165, 0.38),
-    transparent 65%
-  ),
+    /* Warm light coming from the RIGHT */
+    radial-gradient(
+      1100px 700px at 88% 40%,
+      rgba(255, 215, 165, 0.62),
+      transparent 62%
+    ),
 
-  /* Original warmth */
-  radial-gradient(
-    900px 520px at 30% 20%,
-    rgba(183,157,90,.22),
-    transparent 58%
-  ),
+    /* Dark protection on the LEFT for text */
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0.82) 0%,
+      rgba(0,0,0,0.62) 36%,
+      rgba(0,0,0,0.28) 62%,
+      rgba(0,0,0,0.08) 100%
+    ),
 
-  /* Original depth */
-  radial-gradient(
-    700px 460px at 85% 25%,
-    rgba(255,255,255,.10),
-    transparent 60%
-  ),
+    /* Gentle top-to-bottom depth (NOT a dull veil) */
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,0.22) 0%,
+      rgba(0,0,0,0.48) 100%
+    );
+}
 
-  /* Original darkening */
-  linear-gradient(
-    180deg,
-    rgba(0,0,0,.68),
-    rgba(0,0,0,.70)
-  ),
+/* Remove the old veil overlay completely */
+.hero::after{ display:none; }
 
-  /* Image */
-  url("assets/hero.png") center/cover no-repeat;
+.hero > .wrap{ position:relative; z-index:5; }
 
+/* Force hero text readable (no surprises) */
+.hero h1,
+.hero .sub,
+.hero .kicker{
+  color: rgba(255,255,255,.92);
+  text-shadow: 0 2px 22px rgba(0,0,0,.70);
+}
 
 .hero::after{
   content:"";
